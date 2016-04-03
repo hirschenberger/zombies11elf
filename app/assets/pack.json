@@ -1,0 +1,28 @@
+{
+    "preload": [
+        {
+            "type": "image",
+            "key": "preload-bar",
+            "url": "assets/images/preload-bar.png"
+        }
+    ],
+    "menu": [
+        {
+            "type": "image",
+            "key": "zombie-flash",
+            "url": "assets/backgrounds/zombie-flash.jpg"
+        },
+        {
+            "type": "image",
+            "key": "title",
+            "url": "assets/sprites/title.png"
+        }
+      ],
+    "main": [
+        {
+            "type": "audio",
+            "key": "gameMusic",
+            "urls": ["assets/snd/funk_game_loop.mp3", "assets/snd/funk_game_loop.ogg"]
+        }
+    ]
+}
