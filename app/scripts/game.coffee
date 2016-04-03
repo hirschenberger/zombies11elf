@@ -6,7 +6,6 @@ Menu    = require './states/menu'
 Main    = require './states/main'
 
 class Game extends Phaser.Game
-
   constructor : ->
     super Config.width, Config.height, Phaser.AUTO, 'game-content'
 
@@ -16,7 +15,6 @@ class Game extends Phaser.Game
     @state.add 'main', Main
 
     @state.start 'boot'
-
 
 window.onload = ->
   game = new Game()

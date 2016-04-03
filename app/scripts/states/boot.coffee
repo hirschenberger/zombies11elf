@@ -1,7 +1,6 @@
 Config = require('../config')
 
 class Boot
-
   preload: ->
     @load.pack 'preload', Config.pack
 

@@ -1,7 +1,6 @@
 Config = require('../config')
 
 class Preload
-
   preload: ->
     @load.pack 'menu', Config.pack
     @load.setPreloadSprite @add.sprite 0, 0, 'preload-bar'
