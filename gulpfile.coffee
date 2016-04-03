@@ -5,6 +5,7 @@ buffer         = require 'vinyl-buffer'
 plugins        = require('gulp-load-plugins')()
 browserify     = require 'browserify'
 browserSync    = require 'browser-sync'
+deploy         = require('gulp-gh-pages');
 
 
 paths =
@@ -21,11 +22,15 @@ paths =
   buildAssets  : 'build/assets'
   buildScripts : 'build/scripts'
 
+  deploy       : 'build/**/*'
+
 
 gulp.task 'clean', (cb) ->
-
   del [paths.buildDir], cb
 
+gulp.task 'deploy', () ->
+  gulp.src(paths.deploy)
+      .pipe(deploy());
 
 
 gulp.task 'watchChanges', ->
