@@ -20,6 +20,11 @@
       ],
     "main": [
         {
+          "type": "image",
+          "key": "bg-tiles",
+          "url": "assets/backgrounds/tiles.jpg"
+        },
+        {
             "type": "audio",
             "key": "gameMusic",
             "urls": ["assets/snd/funk_game_loop.mp3", "assets/snd/funk_game_loop.ogg"]
