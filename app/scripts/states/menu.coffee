@@ -1,4 +1,10 @@
+Config = require("../config")
+
 class Menu
+
+  preload: ->
+    @load.pack 'main', Config.pack
+    @load.atlasJSONArray 'player', "./assets/sprites/player.png", "./assets/sprites/player.json"
 
   create : ->
     flash = @game.add.image 0, 0, 'zombie-flash'
