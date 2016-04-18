@@ -14,9 +14,23 @@ class Player extends Phaser.Sprite
     @enableBody = true
     @collideWorldBounds = true
     @game.add.existing this
-    @animations.play 'walk-e', 10, true
+    @animations.play 'walk-n', 10, true
 
   update: ->
-    @x += 1
+    dir =  Phaser.Math.radToDeg @game.physics.arcade.angleToPointer(this)
+
+    if dir > -45 and dir < 45
+      @animations.play 'walk-e', 10, true
+    else if dir > 45 and dir < 135
+      @animations.play 'walk-s', 10, true
+    else if dir < -135 or dir > 135
+      @animations.play 'walk-w', 10, true
+    else if dir < -45 and dir > -135
+      @animations.play 'walk-n', 10, true
+
+    if @game.physics.arcade.distanceToPointer(this, @game.input.activePointer) > 8
+      @game.physics.arcade.moveToPointer this, 300
+    else
+      @body.velocity.set 0
 
 module.exports = Player
